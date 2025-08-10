@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('master_items', function (Blueprint $table) {
@@ -21,16 +16,12 @@ return new class extends Migration
             $table->integer('laba');
             $table->string('supplier');
             $table->string('jenis');
+            $table->string('foto')->nullable(); // kalau mau di master_items juga ada foto
             $table->timestamps();
             $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('master_items');
