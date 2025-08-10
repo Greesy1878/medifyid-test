@@ -79,6 +79,7 @@ class MasterItemsController extends Controller
         return view('master_items.single.index', ['data' => $data]);
     }
 
+
     public function formSubmit(Request $request, $method, $id = 0)
     {
         $validatedData = $request->validate([

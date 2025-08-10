@@ -15,7 +15,7 @@
             <input type="text" name="kode" class="form-control" placeholder="Cari Kode">
         </div>
         <div class="col-md-4 align-self-end">
-            <button type="submit" class="btn btn-primary">Filter</button>
+            <button class="btn btn-primary" id="btn-filter" type="button">Filter</button>
             <a href="{{ route('kategori-items.form', ['method' => 'new']) }}" class="btn btn-success">Tambah</a>
         </div>
     </form>
@@ -64,10 +64,9 @@
         });
     }
 
-    $('#filter-form').on('submit', function(e) {
-        e.preventDefault();
-        loadData();
-    });
+    $('#btn-filter').on('click', function() {
+            loadData();
+        });
 
     $(document).ready(loadData);
 </script>

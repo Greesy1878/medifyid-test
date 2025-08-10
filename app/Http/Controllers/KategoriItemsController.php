@@ -13,7 +13,7 @@ class KategoriItemsController extends Controller
         // Mengambil semua kategori untuk kebutuhan filter di view
         $kategoriItems = KategoriItem::orderBy('nama')->get();
 
-        return view('kategori_items.index.index', compact('kategoriItems'));
+        return view('kategori_items.index', compact('kategoriItems'));
     }
 
     public function search(Request $request)
@@ -48,7 +48,7 @@ class KategoriItemsController extends Controller
 
         $items = MasterItem::all();
 
-        return view('kategori_items.form.index', compact('kategori', 'items', 'method'));
+        return view('kategori_items.form', compact('kategori', 'items', 'method'));
     }
 
     public function formSubmit(Request $request, $method, $id = 0)

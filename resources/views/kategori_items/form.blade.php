@@ -19,7 +19,7 @@
 
         <div class="mb-3">
             <label>Pilih Items</label>
-            <select name="items[]" class="form-control" multiple>
+            <select name="items[]" class="form-control">
                 @foreach($items as $item)
                     <option value="{{ $item->id }}"
                         {{ in_array($item->id, old('items', $kategori->masterItems->pluck('id')->toArray())) ? 'selected' : '' }}>
