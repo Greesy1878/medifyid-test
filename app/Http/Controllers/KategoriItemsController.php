@@ -75,7 +75,7 @@ class KategoriItemsController extends Controller
     public function singleView($id)
     {
         $kategori = KategoriItem::with('masterItems')->findOrFail($id);
-        return view('kategori_items.single.index', compact('kategori'));
+        return view('kategori_items.show', compact('kategori'));
     }
 
     public function delete($id)
